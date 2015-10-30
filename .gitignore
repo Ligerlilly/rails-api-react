@@ -25,5 +25,5 @@
 # Ignore system files
 .DS_Store
 
-# Ignore environment files
+# Ignore development key files
 /config/environments/development.rb

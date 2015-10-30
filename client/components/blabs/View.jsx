@@ -12,7 +12,7 @@ module.exports = React.createClass({
   readBlabsFromAPI() {
     this.props.readFromAPI(this.props.origin + '/blabs', (blabs) => {
       this.setState({ data: blabs});
-    }).bind(this);
+    }.bind(this));
   },
   render() {
     return (

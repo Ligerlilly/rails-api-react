@@ -3,7 +3,17 @@ import Router from 'react-router';
 let Link = Router.Link;
 
 module.exports = React.createClass({
+  handleSignOutLink() {
+    sessionStorage.setItem('jwt', '');
+    location = '/';
+  },
   render() {
+    if (this.props.signedIn) {
+      var signingLink = <li><span onClick={this.handleSignOutLink}>Sign Out</span></li>;
+    }
+    else {
+      var signingLink = <li><a href={this.props.origin + '/request_token'}>Sign In</a></li>;
+    }
     return (
       <div id='menu'>
         <span id='menu-link' onClick={this.props.sendMenuClick}><span></span></span>
@@ -13,11 +23,11 @@ module.exports = React.createClass({
             <ul>
               <li><Link to='blabs'>Blabs</Link></li>
               <li><Link to="about">About</Link></li>
+              {{signingLink}}
            </ul>
          </div>
        </div>
      </div>
-
     );
   }
 });
