@@ -7,7 +7,12 @@ module.exports = React.createClass({
     return { data: [] };
   },
   componentDidMount() {
-    this.setState({ data: [{ id: 2, content: 'another fake blab'}, {id: 1, content: 'this is a fake blab'}]});
+    this.readBlabsFromAPI();
+  },
+  readBlabsFromAPI() {
+    this.props.readFromAPI(this.props.origin + '/blabs', (blabs) => {
+      this.setState({ data: blabs});
+    }).bind(this);
   },
   render() {
     return (
