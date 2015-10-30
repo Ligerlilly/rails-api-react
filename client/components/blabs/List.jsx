@@ -5,7 +5,7 @@ module.exports = React.createClass({
   render() {
     var blabs = this.props.data.map((blab) => {
       return (
-        <Blab key={blab.id} content={blab.content} />
+        <Blab key={blab.id} content={blab.content} author={blab.user.handle}/>
       );
     });
 
