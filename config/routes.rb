@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   resources :blabs, only: [:index, :create, :show]
 
+  get '*all', to: 'application#index', via: [:get]
 
 end
