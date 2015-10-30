@@ -3,7 +3,11 @@ require('./assets/menu.css');
 require('./assets/blabs.css');
 
 
-import React from 'react';
-import App from './components/layout/App.jsx';
 
-React.render(<App/>, document.body);
+import React from 'react';
+import Router from 'react-router';
+import routes from './config/routes.jsx';
+
+Router.run(routes, Router.HistoryLocation, (Handler) => {
+  React.render(<Handler />, document.body);
+});
