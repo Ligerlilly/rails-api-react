@@ -6,6 +6,7 @@ module.exports = React.createClass({
     let content = this.refs.content.getDOMNode().value.trim();
     if (!content) { return; }
     if ( this.props.signedIn) {
+      this.props.optimisticUpdate({ id: 'fake-id', content: content, user: this.props.current_user })
       this.props.writeBlabToAPI(JSON.stringify({ blab: {content: content } }));
       this.refs.content.getDOMNode.value = '';
       this.refs.content.getDOMNode.blur();
