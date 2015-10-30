@@ -5,9 +5,16 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
-      { test: /\.css$/, loader: 'style!css' },
-      { test: /\.jsx$/, loader: 'jsx-loader' }
-    ]
-  }
+  loaders: [
+    {
+      test: /\.jsx?$/,
+      exclude: /(node_modules|bower_components)/,
+      loader: 'babel'
+    },
+    {
+      test: /\.css$/, loader: 'style!css'
+    }
+  ]
+}
+
 };

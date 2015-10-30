@@ -1,12 +1,11 @@
 import React from 'react';
-import BlabsView from '../blabs/View.jsx';
 
 module.exports = React.createClass({
   render() {
     return (
-      <div id='content'>
-        <BlabsView />
-      </div>
+      <li className='blab'>
+        <span className='blab-text'>{this.props.content}</span>
+      </li>
     );
   }
 });
