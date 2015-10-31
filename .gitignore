@@ -27,3 +27,4 @@
 
 # Ignore development key files
 /config/environments/development.rb
+/config/secrets.rb
