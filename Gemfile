@@ -8,7 +8,7 @@ gem 'puma'
 gem 'pg'
 gem 'oauth'
 gem 'jwt'
-gem 'pry'
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'launchy'

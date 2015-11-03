@@ -1,11 +1,11 @@
 import React from 'react';
 import Reqwest from 'reqwest';
 import BlabsView from '../blabs/View.jsx';
-import Menu from './Menu.jsx';
+var Menu = require('./Menu.jsx');
 import Router from 'react-router';
 import Uri from 'jsuri';
 
-let RouteHandler = Router.RouteHandler;
+
 
 
 module.exports = React.createClass({
@@ -66,7 +66,7 @@ module.exports = React.createClass({
       <div id='app' className={menu}>
         <Menu origin={this.props.origin} sendMenuClick={this.handleMenuClick} signedIn={this.state.signedIn}/>
         <div id='content'>
-          <RouteHandler origin={this.props.origin} readFromAPI={this.readFromAPI} writeToAPI={this.writeToAPI} currentUser={this.state.currentUser}  signedIn={this.state.signedIn}/>
+          {React.cloneElement(this.props.children, {readFromAPI: this.readFromAPI, origin: this.props.origin, writeToAPI: this.writeToAPI, currentUser: this.state.currentUser, signedIn: this.state.signedIn})}
         </div>
       </div>
     );

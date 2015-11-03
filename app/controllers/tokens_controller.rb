@@ -3,6 +3,7 @@ class TokensController < ApplicationController
     request_token = TWITTER.get_request_token(oauth_callback: ENV['OAUTH_CALLBACK'])
     Oauth.create(token: request_token.token, secret: request_token.secret)
     redirect_to request_token.authorize_url(oauth_callback: ENV['OAUTH_CALLBACK'])
+
   end
 
   def access_token
