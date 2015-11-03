@@ -1,15 +1,15 @@
 import React from 'react';
+import { Component } from 'react';
 import Router from 'react-router';
-import createFragment from 'react-addons-create-fragment'
 import {Link} from 'react-router';
 var  SignOut = require('./SignOut.jsx');
 var  SignIn = require('./SignIn.jsx');
 
-export default React.createClass({
+export default  class Menu extends Component {
   handleSignOutLink() {
     sessionStorage.setItem('jwt', '');
     location = '/';
-  },
+  }
   render() {
     var login
     if (this.props.signedIn) {
@@ -27,14 +27,10 @@ export default React.createClass({
               <li><Link to="/">Blabs</Link></li>
               <li><Link to="/about">About</Link></li>
               {login}
-
-
-
-
             </ul>
           </div>
         </div>
       </div>
     );
   }
-});
+};

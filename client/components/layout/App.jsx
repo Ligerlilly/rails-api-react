@@ -24,7 +24,7 @@ module.exports = React.createClass({
   },
   currentUserFromAPI() {
     this.readFromAPI(this.props.origin + '/current_user', (user) => {
-      this.setState({signedIn: true, current_user: user});
+      this.setState({signedIn: true, currentUser: user});
     }.bind(this));
   },
   handleMenuClick() {
